@@ -17,5 +17,9 @@ export const GlobalStyle = createGlobalStyle`
         font-family: ${(props) => props.theme.fonts.regular};
         font-weight: 400;
         font-size: ${(props) => props.theme.textSizes["text-regular-m"]}
+
+        button{
+            cursor: pointer;
+        }
 }
 `;
