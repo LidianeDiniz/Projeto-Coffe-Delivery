@@ -8,10 +8,13 @@ export function Header (){
             <div>
              <img src={logoCoffeImg} alt="" />
               <HeaderContainerButton>
-                <HeaderButton>
+                <HeaderButton variant='purple' >
                 <MapPin size={22} weight='fill'/>
-                Porto Alegre, Rs
-                <ShoppingCart/>
+                Porto Alegre, Rs                       
+                </HeaderButton>
+
+                <HeaderButton variant='yellow'>
+                <ShoppingCart size={22} weight='fill'/>
                 </HeaderButton>
                 
                 </HeaderContainerButton>  
