@@ -24,7 +24,7 @@ interface HeaderButtonProps {
     variant : 'purple' | 'yellow'
 }
 
-export const HeaderContainerButton = styled.button`
+export const Header = styled.button`
  display: flex;
  align-items: center;
  gap: 0.75rem;
