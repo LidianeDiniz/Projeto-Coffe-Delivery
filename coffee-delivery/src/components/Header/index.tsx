@@ -1,27 +1,24 @@
-import { HeaderContainer, HeaderButtonContainer, HeaderButton } from './styles';
-import logoCoffeImg from '../../assets/logo-coffe-delivery.svg'
+import { HeaderContainer, HeaderButton, HeaderCardsContainer } from "./styles";
+import logoCoffeImg from "../../assets/logo-coffe-delivery.svg";
 import { MapPin, ShoppingCart } from "phosphor-react";
 
-export function Header (){
-    return (
-        <HeaderContainer>
-            <div>
-             <img src={logoCoffeImg} alt="" />
-              <HeaderButtonContainer>
-                <HeaderButton variant='purple' >
-                <MapPin size={22} weight='fill'/>
-                Porto Alegre, Rs                       
-                </HeaderButton>
+export function Header() {
+  return (
+    <HeaderContainer>
+        <img src={logoCoffeImg} alt="" />
 
-                <HeaderButton variant='yellow'>
-                <ShoppingCart size={22} weight='fill'/>
-                </HeaderButton>
-                
-                </HeaderButtonContainer>  
-           
-            </div>
-           
+      <HeaderCardsContainer>
 
-        </HeaderContainer>
-    )
+        <HeaderButton variant="purple">
+          <MapPin size={22} weight="fill" />
+          Porto Alegre, Rs
+        </HeaderButton>
+
+        <HeaderButton variant="yellow">
+          <ShoppingCart size={22} weight="fill" />
+        </HeaderButton>
+        
+      </HeaderCardsContainer>
+    </HeaderContainer>
+  );
 }
