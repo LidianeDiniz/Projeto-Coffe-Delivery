@@ -1,5 +1,6 @@
 import {  CardPrice, CoffeeCardContainer, CounterActions, Description, Name, Tags, } from "./styled";
 import arabic from '../../../../../public/arabic.png';
+import { ButtonCounterActions } from "../../../../components/ButtonCounterActions";
 
 export function CoffeeCards(){
     return(
@@ -21,11 +22,8 @@ export function CoffeeCards(){
            </CardPrice>
 
            <CounterActions>
-           <button>
-            <span>+</span>
-            <span>1</span>
-            <span>-</span>
-           </button>
+          <ButtonCounterActions/>
+           
             
            </CounterActions>
 
