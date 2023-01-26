@@ -1,45 +1,30 @@
 import { CoffeeListContainer, CoffeeList, CoffeeTitle } from './styles';
-import coffeeAmerican from '../../../../../public/american.png'
+import { CoffeeCards } from '../CoffeeCards';
 
 export function CoffeList(){
     return(
-        <>
+       
         <CoffeeListContainer>
         <CoffeeTitle>
         Nossos cafés
         </CoffeeTitle>
 
         <CoffeeList>
-        <img src={coffeeAmerican} alt="" />
-        <img src={coffeeAmerican} alt="" />
-        <img src={coffeeAmerican} alt="" />
-        <img src={coffeeAmerican} alt="" />
-        <img src={coffeeAmerican} alt="" />
-        <img src={coffeeAmerican} alt="" />
-        <img src={coffeeAmerican} alt="" />
-        <img src={coffeeAmerican} alt="" />
-        </CoffeeList>   
-
-
-
-        
+            <CoffeeCards />
+            <CoffeeCards />
+            <CoffeeCards />
+            <CoffeeCards />
+            <CoffeeCards />
+            <CoffeeCards />
+            <CoffeeCards />
+            <CoffeeCards />
+        </CoffeeList>
 
        
-         <CoffeeList>
-        </CoffeeList>       
-          
-
-         <CoffeeList>
-        </CoffeeList>           
-        
-         <CoffeeList>
-        </CoffeeList>           
-        
-
-        
+       
         </CoffeeListContainer>
 
 
-        </>
+       
     )
 }
