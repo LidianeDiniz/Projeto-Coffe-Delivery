@@ -6,52 +6,47 @@ import {
   Name,
   Tags,
 } from "./styled";
-import arabic from "../../../../assets/coffes/arabic.png";
 import { ButtonCounterActions } from "../../../../components/ButtonCounterActions";
 import { ShoppingCart } from "phosphor-react";
+import { coffee } from "../../../../data/coffees"; 
 
-export interface Coffee {
-  id:number;
-  name:string;
-  description:string;
-  price:number;
-  image:string;
-  tags:string[],
-  quantity:number
+
+
+export interface CoffeeProps {
+  coffee: coffee;
 }
 
-interface CoffeeProps{
-  coffee: Coffee;
-}
-
-export function CoffeeCards({coffee}: CoffeeProps) {
+export function CoffeeCards({ coffee }: CoffeeProps) {
   return (
     <CoffeeCardContainer>
-      <img src={arabic} alt="" />
+      <img src={`/${coffee.image}`} />
       <Tags>
-       {coffee.tags.map(tag =>(
-        <span key={`${coffee.id}${tag}`}></span>
-       ))}
+      {coffee.tags.map((tag) => (
+          <span key={coffee.id}>{tag}</span>
+        ))}
       </Tags>
 
-      <Name>Expresso Tardicional</Name>
+      <Name>{coffee.name}</Name>
 
-      <Description>
-        Uma dose de café expresso com o dobro de leite e espuma cremosa
-      </Description>
+      <Description>{coffee.description}</Description>
 
       <CardPrice>
         <div>
           <span>R$</span>
-          <strong>9,90</strong>
+
+          <strong>
+            {Intl.NumberFormat("pt-BR", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            }).format(coffee.price)}
+          </strong>
         </div>
 
         <CounterActions>
-         
           <ButtonCounterActions />
-        <button>
-            <ShoppingCart size={20} weight="fill"/>
-        </button>
+          <button>
+            <ShoppingCart size={20} weight="fill" />
+          </button>
         </CounterActions>
       </CardPrice>
     </CoffeeCardContainer>

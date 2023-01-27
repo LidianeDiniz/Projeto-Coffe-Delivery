@@ -14,7 +14,7 @@ font-family: 'Baloo 2', sans-serif;
 `;
 
 export const CoffeeList = styled.div`
-width: 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;

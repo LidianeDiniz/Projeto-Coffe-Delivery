@@ -4,17 +4,24 @@ export const CoffeeCardContainer = styled.div`
   width: 100%;
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px 36px 6px 36px;
-  padding: 1.25rem;
+  padding: 1.50rem;
   padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: space-between;  
+  transition: filter 0.5s;
+
+  &:hover {
+  filter: brightness(0.99);
 
   img {
     width: 7.5rem;
     height: 7.5rem;
     margin-top: -1.25rem;
+
+}
   }
 `;
 
@@ -27,13 +34,12 @@ export const Tags = styled.div`
   margin-top: 1rem;
   margin-bottom: 1.25rem;
   flex-wrap: wrap;
-
+  
   span {
-    background: ${(props) => props.theme["brand-yellow"]};
+    background: ${(props) => props.theme["brand-yellow-light"]};
     color: ${(props) => props.theme["brand-yellow-dark"]};
     font-family: "Roboto", sans-serif;
     font-size: 0.62rem;
-    text-transform: uppercase;
     padding: 0.25rem 0.5rem;
     border-radius: 999px;
     font-weight: 700;
@@ -42,9 +48,11 @@ export const Tags = styled.div`
 
 export const Name = styled.text`
   color: ${(props) => props.theme["base-subtitle"]};
+  text-transform: uppercase;
   font-family: "Baloo 2", sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
+  line-height: 1.62rem;
   margin-botom: 0.5rem;
 `;
 
@@ -55,7 +63,7 @@ export const Description = styled.p`
   color: ${(props) => props.theme["base-label"]};
   margin-bottom: 2rem;
   margin-top: 0.5rem;
-  height: 36px;
+  
 `;
 
 export const CardPrice = styled.div`
@@ -63,7 +71,7 @@ export const CardPrice = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto;
+  margin-bottom: 1.25rem;
 
   > div {
     display: flex;

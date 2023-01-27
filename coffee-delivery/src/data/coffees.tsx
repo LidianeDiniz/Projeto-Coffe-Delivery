@@ -1,5 +1,13 @@
 
-
+export interface coffee {
+   id: number;
+   name: string;
+   description: string;
+   price: number;
+   image: string;
+   tags: string[];
+   quantity: number;
+ }
 export const coffees = 
 [
    {
