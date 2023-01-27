@@ -1,34 +1,59 @@
-import {  CardPrice, CoffeeCardContainer, CounterActions, Description, Name, Tags, } from "./styled";
-import arabic from '../../../../../public/arabic.png';
+import {
+  CardPrice,
+  CoffeeCardContainer,
+  CounterActions,
+  Description,
+  Name,
+  Tags,
+} from "./styled";
+import arabic from "../../../../assets/coffes/arabic.png";
 import { ButtonCounterActions } from "../../../../components/ButtonCounterActions";
+import { ShoppingCart } from "phosphor-react";
 
-export function CoffeeCards(){
-    return(
-        <CoffeeCardContainer>
-            <img src={arabic} alt="" />
-           <Tags>
-           <span>Tradicional</span>
-           <span>Com Leite</span>
-           <span>Gealado</span>
-           </Tags>
+export interface Coffee {
+  id:number;
+  name:string;
+  description:string;
+  price:number;
+  image:string;
+  tags:string[],
+  quantity:number
+}
 
-           <Name>Expresso Tardicional</Name>
-           <Description>Uma dose de café expresso com o dobro de leite e espuma cremosa</Description>
-           <CardPrice>
-            <div>
-                <span>R$</span>
-                <strong>9,90</strong>
-            </div>
-           </CardPrice>
+interface CoffeeProps{
+  coffee: Coffee;
+}
 
-           <CounterActions>
-          <ButtonCounterActions/>
-           
-            
-           </CounterActions>
+export function CoffeeCards({coffee}: CoffeeProps) {
+  return (
+    <CoffeeCardContainer>
+      <img src={arabic} alt="" />
+      <Tags>
+       {coffee.tags.map(tag =>(
+        <span key={`${coffee.id}${tag}`}></span>
+       ))}
+      </Tags>
 
-            
+      <Name>Expresso Tardicional</Name>
 
-        </CoffeeCardContainer>
-    )
+      <Description>
+        Uma dose de café expresso com o dobro de leite e espuma cremosa
+      </Description>
+
+      <CardPrice>
+        <div>
+          <span>R$</span>
+          <strong>9,90</strong>
+        </div>
+
+        <CounterActions>
+         
+          <ButtonCounterActions />
+        <button>
+            <ShoppingCart size={20} weight="fill"/>
+        </button>
+        </CounterActions>
+      </CardPrice>
+    </CoffeeCardContainer>
+  );
 }

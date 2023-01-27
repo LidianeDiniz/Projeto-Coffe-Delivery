@@ -37,7 +37,7 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
   border: none;
   padding: 0 0.5rem;
   position: relative;
-  cursor: inherit;
+  cursor: pointer;
 
 
 ${(props) =>

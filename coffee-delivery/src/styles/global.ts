@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
 
-        body, input, textarea, button {
+        body, input, textarea,  button {
 
             background-color: ${(props) => props.theme["base-background"]};
            color: ${(props) => props.theme["base-text"]};
@@ -26,7 +26,26 @@ export const GlobalStyle = createGlobalStyle`
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             font-size: 1rem; 
-    }      
+    }    
+    
+    a{ 
+        text-decoration: none;
+    }
+
+    button{
+        cursor: pointer;
+    }
+
+    input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+    input[type=number] { 
+    -moz-appearance: textfield;
+    appearance: textfield;
+
+}
+
         
 
 `;
