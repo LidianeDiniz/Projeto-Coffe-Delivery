@@ -46,7 +46,8 @@ export const Tags = styled.div`
   }
 `;
 
-export const Name = styled.text`
+export const Name = styled.h4
+`
   color: ${(props) => props.theme["base-subtitle"]};
   text-transform: uppercase;
   font-family: "Baloo 2", sans-serif;

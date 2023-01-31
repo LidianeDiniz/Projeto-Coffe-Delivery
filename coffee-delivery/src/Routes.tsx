@@ -1,16 +1,22 @@
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/Home';
-import { CompleteOrderPage } from './pages/CompleteOrder/index';
 import { DefaultLayout } from './layouts/DefaultLayout';
-export function Router(){
-    return(
-        <Routes>
-            <Route path='/' element = {<DefaultLayout/>}>
-            <Route path='/' element ={<HomePage/>}/>
-            <Route path='/completeOrder' element={<CompleteOrderPage/>}/>
-            </Route>
+import { CompleteOrderPage} from './pages/CompleteOrder';
+import { DeliveryFormProps } from './pages/CompleteOrder/CartItem/CoffeeForm';
 
-          
-        </Routes>
-    )
+interface RouterProps {
+  address: DeliveryFormProps["address"];
+  setAddress: DeliveryFormProps["setAddress"];
+}
+
+export function Router({ address, setAddress }: RouterProps) {
+  return (
+    <Routes>
+      <Route path="/" element={<DefaultLayout />}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/complete-order" element={<CompleteOrderPage address={address} setAddress={setAddress} />} />
+      </Route>
+    </Routes>
+  );
 }
