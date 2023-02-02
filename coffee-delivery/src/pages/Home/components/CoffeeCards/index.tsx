@@ -8,21 +8,30 @@ import {
 } from "./styled";
 import { ButtonCounterActions } from "../../../../components/ButtonCounterActions";
 import { ShoppingCart } from "phosphor-react";
-import { coffee } from "../../../../data/coffees"; 
+
+export interface Coffee {
+  id: number;
+  tags: string[];
+  name: string;
+  description: string;
+  image: string;
+  price: number;
+}
 
 
 
 export interface CoffeeProps {
-  coffee: coffee;
+  coffee: Coffee;
 }
 
 export function CoffeeCards({ coffee }: CoffeeProps) {
+ 
   return (
     <CoffeeCardContainer>
-      <img src={`/${coffee.image}`} />
+     <img src={`/${coffee.image}`} alt="" width={120} />
       <Tags>
       {coffee.tags.map((tag) => (
-          <span key={coffee.id}>{tag}</span>
+          <span key={`${coffee.id}${tag}`}>{tag}</span>
         ))}
       </Tags>
 

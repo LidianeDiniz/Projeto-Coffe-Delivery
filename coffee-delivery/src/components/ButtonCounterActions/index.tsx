@@ -7,7 +7,7 @@ export function ButtonCounterActions(){
             <IconAdd>
             <Plus size={16} weight="bold"/>
             </IconAdd>
-            <input type="number" value={1} /> 
+            <input type="number" value={1} onChange={ButtonCounterActions} /> 
             <IconAdd><Minus size={16} weight="bold"/></IconAdd>
 
         </ButtoncounterContainer>

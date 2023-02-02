@@ -1,14 +1,6 @@
 
-export interface coffee {
-   id: number;
-   name: string;
-   description: string;
-   price: number;
-   image: string;
-   tags: string[];
-   quantity: number;
- }
-export const coffees = 
+
+export const coffee = 
 [
    {
       id: 0,
@@ -175,3 +167,5 @@ export const coffees =
          quantity: 0
       }
 ]
+
+export default coffee;

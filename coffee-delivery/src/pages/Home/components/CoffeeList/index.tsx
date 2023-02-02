@@ -1,17 +1,18 @@
-import { CoffeeListContainer, CoffeeList, CoffeeTitle } from "./styles";
-import { coffees } from "../../../../data/coffees";
+import { CoffeeListContainer, CoffeeListImage, CoffeeTitle } from "./styles";
 import { CoffeeCards } from "../CoffeeCards";
+import coffees from "../../../../data/coffees";
 
-export function CoffeList() {
+export function CoffeeList() {
   return (
     <CoffeeListContainer>
       <CoffeeTitle>Nossos cafés</CoffeeTitle>
 
-      <CoffeeList>
-        {coffees.map((coffee) => (
-          <CoffeeCards coffee={coffee} key={coffee.id} />
+      <CoffeeListImage>
+               
+      {coffees.map((coffee) => (
+          <CoffeeCards key={coffee.id} coffee={coffee} />
         ))}
-      </CoffeeList>
+      </CoffeeListImage>
     </CoffeeListContainer>
   );
 }
