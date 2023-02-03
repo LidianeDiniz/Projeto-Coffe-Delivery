@@ -17,19 +17,22 @@ export const PaymentMethodContainer = styled.div`
 `
 
 export const ContentContainer = styled.div`
-  cursor: pointer;
-  padding: 0 1.6rem;
-  background: ${(props) => props.theme['base-button']};
-  color: ${(props) => props.theme['base-text']};
+  width: 11.5rem;
+  height: 3.18rem;
+  
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
-  gap: 1.2rem;
+  padding:  1rem;
+  gap: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  
+  color: ${(props) => props.theme['base-text']};
   text-transform: uppercase;
-  border-radius: 0.6rem;
-  height: 5.1rem;
-  font-size: 1.2rem;
+  background: ${(props) => props.theme['base-button']};
   border: 1px solid ${(props) => props.theme['base-button']};
+  cursor: pointer;
   transition: 0.4s;
 
   svg {

@@ -1,12 +1,10 @@
-import { CurrencyDollar, MapPin, MapPinLine } from "phosphor-react";
 import { CompleteOrderContainer, SectionTitleContainer, Title, AddressFormContainer, PaymentMethodOptionsContainer } from './styles';
 import { CartForm } from "./CartForm";
-import { HeaderForm } from "./HeaderForm";
+import { PaymentMethodContainer } from './PaymentMethod/styles';
+import { PaymentMethodOptions } from './PaymentMethodOptions/index';
 
 
-interface SectionTitleProps {
-    subtitle: void;
-  }
+
 
 export function CompleteOrderPage(){
     return(
@@ -21,8 +19,10 @@ export function CompleteOrderPage(){
         
         <CartForm/>
         <AddressFormContainer />
-      
-      <PaymentMethodOptionsContainer/>
+        
+      <PaymentMethodContainer>
+        <PaymentMethodOptions/>
+      </PaymentMethodContainer>
         
         </CompleteOrderContainer>
      

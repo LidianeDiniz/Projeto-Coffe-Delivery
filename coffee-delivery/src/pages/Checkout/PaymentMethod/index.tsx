@@ -6,7 +6,7 @@ type PaymentMethodInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string
 }
 
-export const PaymentMethodInput = forwardRef<
+export const PaymentMethod = forwardRef<
   HTMLInputElement,
   PaymentMethodInputProps
 >(({ id, icon, label, ...props }, ref) => {
