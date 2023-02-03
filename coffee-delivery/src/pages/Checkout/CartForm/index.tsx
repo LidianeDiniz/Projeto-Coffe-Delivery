@@ -1,6 +1,7 @@
-import { MapPinLine } from "phosphor-react";
 import { useForm } from "react-hook-form";
-import { AdressContainer } from "./styled";
+import { AdressContainer, AdressHeaderContainer, Grid, PaymentContainer } from "./styles";
+import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import { HeaderForm } from "../HeaderForm";
 
 interface Inputs {
   cep: string;
@@ -14,7 +15,20 @@ interface Inputs {
 export function CartForm() {
   const { register } = useForm<Inputs>();
   return (
+
+    <Grid>
+      
+      <AdressHeaderContainer>
+      <HeaderForm
+          title="Endereço de entrega"
+          description="Informe o endereço onde deseja receber o seu pedido"
+          icon={<MapPinLine size={22} color="#C47F17"/>}
+        />     
+      </AdressHeaderContainer>
+
     <AdressContainer>
+    
+
       
       <input className="CEP"
         type="number"
@@ -65,6 +79,20 @@ export function CartForm() {
       />
     
     </AdressContainer>
+
+    <PaymentContainer>
+    
+    
+        <HeaderForm 
+         title="Pagamento"
+         description="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
+         icon={<CurrencyDollar size={24} color={'#8047F8'} />}
+        />
+    </PaymentContainer>
+
+    </Grid>
+
+   
      
   );
 }

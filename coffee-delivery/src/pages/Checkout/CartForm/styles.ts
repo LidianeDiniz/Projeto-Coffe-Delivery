@@ -1,10 +1,31 @@
 import styled from "styled-components";
 
+
+export const Grid = styled.div`
+margin: 0.5rem;
+padding: 2.5rem;
+top: 0;
+width: 532px;
+
+`;
+
+export const AdressHeaderContainer = styled.section`
+background: ${(props) => props.theme['base-card']};
+display: flex;
+margin-bottom: 5rem;
+border-radius: 0.6rem;
+
+}
+`;
+
+
 export const AdressContainer = styled.form`
     
     display: grid;
     column-gap: 0.75rem;
     row-gap: 1rem;
+    margin-bottom: 5.75rem;
+
     
     .cep {
       display: grid;
@@ -32,11 +53,15 @@ export const AdressContainer = styled.form`
     color: ${(props) => props.theme['base-label']};
   
   
-  }
-  
-  
-  
+  } 
   
   `;
+
+export const PaymentContainer = styled.footer`
+background: ${(props) => props.theme['base-card']};
+border-radius: 0.6rem;
+
+}
+`;
 
 
