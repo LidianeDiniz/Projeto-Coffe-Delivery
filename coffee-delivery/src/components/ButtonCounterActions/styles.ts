@@ -21,8 +21,6 @@ export const ButtoncounterContainer= styled.div`
     color: ${(props)=> props.theme["base-title"]};
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.3rem;
-    padding: 0.5rem;
           
    
   
@@ -40,7 +38,6 @@ export const ButtoncounterContainer= styled.div`
       background: none;
       color: ${(props)=> props.theme["brand-purple"]};
       border: none;
-      font-size: 1rem;      
       transition: all .5s;
       border: 3px solid transparent;
 
