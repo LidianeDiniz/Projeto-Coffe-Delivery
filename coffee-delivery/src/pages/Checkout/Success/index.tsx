@@ -1,6 +1,6 @@
 import { SuccessContainer, DetailsContainer, TitleText } from "./styles";
-import logo from "../../../assets/coffees/american.png";
 import { CoffeeCartCard } from "../CoffeeCartCard";
+import { ConfirmationSection } from "./ConfirmationSection";
 
 export function Success() {
   return (
@@ -10,6 +10,7 @@ export function Success() {
       <CoffeeCartCard />
       <CoffeeCartCard />
       <CoffeeCartCard />
+      <ConfirmationSection/>
       </SuccessContainer>
     </DetailsContainer>
   );
