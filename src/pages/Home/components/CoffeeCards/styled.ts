@@ -11,10 +11,14 @@ export const CoffeeCardContainer = styled.div`
   align-items: center;
   text-align: center;
   justify-content: space-between;  
-  transition: filter 0.5s;
+
+  transition: transform 0.6s ease-in-out;  
+  transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
-  filter: brightness(0.99);
+    border: 5px solid #D7D5D5 ;
+            transform: scale(0.98); 
+            box-shadow: 0 15px 5px rgba(0,0,0,0.5);
 
   img {
     width: 7.5rem;

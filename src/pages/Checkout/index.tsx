@@ -1,12 +1,12 @@
 import { CartForm } from "./CartForm";
-import { Success } from "./Success";
 import { CompleteOrderContainer } from "./styles";
+import { CoffeCardCheckout } from './CoffeCardCheckout/index';
 
 export function CompleteOrderPage() {
   return (
     <CompleteOrderContainer>
       <CartForm />
-      <Success />
+      <CoffeCardCheckout />
     </CompleteOrderContainer>
   );
 }

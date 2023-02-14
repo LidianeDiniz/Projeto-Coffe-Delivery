@@ -1,17 +1,17 @@
-import { SuccessContainer, DetailsContainer, TitleText } from "./styles";
+import {  CoffeCardContainer, DetailsContainer, TitleText } from "./styles";
 import { CoffeeCartCard } from "../CoffeeCartCard";
 import { ConfirmationSection } from "./ConfirmationSection";
 
-export function Success() {
+export function CoffeCardCheckout() {
   return (
     <DetailsContainer>
       <TitleText>Cafés Selecionados</TitleText>
-      <SuccessContainer>
+      <CoffeCardContainer>
       <CoffeeCartCard />
       <CoffeeCartCard />
       <CoffeeCartCard />
       <ConfirmationSection/>
-      </SuccessContainer>
+      </CoffeCardContainer>
     </DetailsContainer>
   );
 }

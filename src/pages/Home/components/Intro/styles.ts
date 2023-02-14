@@ -76,6 +76,8 @@ export const IconsContainer = styled.a`
 
 &:hover{
   filter: brightness(1.2)
+
+  
 }
 }
 
