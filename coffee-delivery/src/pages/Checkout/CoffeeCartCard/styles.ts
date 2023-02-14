@@ -23,10 +23,10 @@ export const CoffeeCartCardContainer = styled.div`
 
   > p {
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
-    font-weight:bold;
-    align-self: flex-start;   
-     
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    align-self: flex-start;
+
     color: ${(props) => props.theme["base-text"]};
   }
 `;
