@@ -9,7 +9,7 @@ export function Header() {
       <NavLink to="/">
         <img src={logoCoffeImg} alt="" />
       </NavLink>
-      
+
       <HeaderCardsContainer>
         <HeaderButton variant="purple">
           <MapPin size={22} weight="fill" />

@@ -9,7 +9,6 @@ import {
 } from "./styles";
 import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import { HeaderForm } from "../HeaderForm";
-import { PaymentMethodContainer } from "../PaymentMethod/styles";
 import { PaymentMethodOptions } from "../PaymentMethodOptions/index";
 
 interface Inputs {
