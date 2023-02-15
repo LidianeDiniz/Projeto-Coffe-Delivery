@@ -3,13 +3,10 @@ import { Intro } from "./components/Intro";
 import { HomeConatiner } from "./styles";
 
 export function HomePage(){
-   
-    return(
-        <HomeConatiner>
-        
+      return(
+        <HomeConatiner>        
         <Intro/>
-        <CoffeeList/>        
-      
+        <CoffeeList/>      
        </HomeConatiner>
     )
 }

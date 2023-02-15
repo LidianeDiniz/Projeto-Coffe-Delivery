@@ -8,6 +8,7 @@ import {
 } from "./styled";
 import { ButtonCounterActions } from "../../../../components/ButtonCounterActions";
 import { ShoppingCart } from "phosphor-react";
+import { useCarts } from '../../../../hooks/useCarts';
 
 export interface Coffee {
   id: number;
@@ -24,8 +25,15 @@ export interface CoffeeProps {
   coffee: Coffee;
 }
 
-export function CoffeeCards({ coffee }: CoffeeProps) {
- 
+export function CoffeeCardsItem({ coffee }: CoffeeProps) {
+  const {AddToCart} = useCarts()
+ function handleAddCoffeeCard(){
+  const coffeeCard = {
+    ...coffee,
+    quantity: 1
+  }
+  AddToCart(coffeeCard)
+ }
   return (
     <CoffeeCardContainer>
      <img src={`/${coffee.image}`} alt="" width={120} />
@@ -54,7 +62,7 @@ export function CoffeeCards({ coffee }: CoffeeProps) {
         <CounterActions>
           <ButtonCounterActions />
           <button>
-            <ShoppingCart size={20} weight="fill" />
+            <ShoppingCart onClick={handleAddCoffeeCard} size={20} weight="fill" />
           </button>
         </CounterActions>
       </CardPrice>
