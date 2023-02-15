@@ -6,9 +6,10 @@ import {
   Name,
   Tags,
 } from "./styled";
-import { ButtonCounterActions } from "../../../../components/ButtonCounterActions";
 import { ShoppingCart } from "phosphor-react";
-import { useCarts } from '../../../../hooks/useCarts';
+import { useCarts } from "../../../../hooks/useCarts";
+import { useState } from "react";
+import { ButtonCounterActions } from "../../../../components/ButtonCounterActions";
 
 export interface Coffee {
   id: number;
@@ -19,26 +20,34 @@ export interface Coffee {
   price: number;
 }
 
-
-
 export interface CoffeeProps {
   coffee: Coffee;
 }
 
 export function CoffeeCardsItem({ coffee }: CoffeeProps) {
-  const {AddToCart} = useCarts()
- function handleAddCoffeeCard(){
-  const coffeeCard = {
-    ...coffee,
-    quantity: 1
+  const [quantity, setQuantity] = useState(1);
+
+  function handleIncrement() {
+    setQuantity((state) => state + 1);
   }
-  AddToCart(coffeeCard)
- }
+
+  function handleDecrement() {
+    setQuantity((state) => state - 1);
+  }
+
+  const { AddToCart } = useCarts();
+  function handleAddCoffeeCard() {
+    const coffeeCard = {
+      ...coffee,
+      quantity,
+    };
+    AddToCart(coffeeCard);
+  }
   return (
     <CoffeeCardContainer>
-     <img src={`/${coffee.image}`} alt="" width={120} />
+      <img src={`/${coffee.image}`} alt="" width={120} />
       <Tags>
-      {coffee.tags.map((tag) => (
+        {coffee.tags.map((tag) => (
           <span key={`${coffee.id}${tag}`}>{tag}</span>
         ))}
       </Tags>
@@ -60,9 +69,17 @@ export function CoffeeCardsItem({ coffee }: CoffeeProps) {
         </div>
 
         <CounterActions>
-          <ButtonCounterActions />
+          <ButtonCounterActions
+            onIncrement={handleIncrement}
+            onDecrement={handleDecrement}
+            quantity={quantity}
+          />
           <button>
-            <ShoppingCart onClick={handleAddCoffeeCard} size={20} weight="fill" />
+            <ShoppingCart
+              onClick={handleAddCoffeeCard}
+              size={20}
+              weight="fill"
+            />
           </button>
         </CounterActions>
       </CardPrice>

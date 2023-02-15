@@ -1,5 +1,5 @@
 import { CoffeeListContainer, CoffeeListImage, CoffeeTitle } from "./styles";
-import { CoffeeCards } from "../CoffeeCards";
+import { CoffeeCardsItem } from "../CoffeeCards";
 import coffees from "../../../../data/coffees";
 
 export function CoffeeList() {
@@ -10,7 +10,7 @@ export function CoffeeList() {
       <CoffeeListImage>
                
       {coffees.map((coffee) => (
-          <CoffeeCards key={coffee.id} coffee={coffee} />
+          <CoffeeCardsItem key={coffee.id} coffee={coffee} />
         ))}
       </CoffeeListImage>
     </CoffeeListContainer>
