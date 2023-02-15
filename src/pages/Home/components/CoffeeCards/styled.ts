@@ -4,28 +4,27 @@ export const CoffeeCardContainer = styled.div`
   width: 100%;
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px 36px 6px 36px;
-  padding: 1.50rem;
+  padding: 1.5rem;
   padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: space-between;  
+  justify-content: space-between;
 
-  transition: transform 0.6s ease-in-out;  
+  transition: transform 0.6s ease-in-out;
   transition: box-shadow 0.2s ease-in-out;
 
   &:hover {
-    border: 5px solid #D7D5D5 ;
-            transform: scale(0.98); 
-            box-shadow: 0 15px 5px rgba(0,0,0,0.5);
+    border: 5px solid #d7d5d5;
+    transform: scale(0.98);
+    box-shadow: 0 15px 5px rgba(0, 0, 0, 0.5);
 
-  img {
-    width: 7.5rem;
-    height: 7.5rem;
-    margin-top: -1.25rem;
-
-}
+    img {
+      width: 7.5rem;
+      height: 7.5rem;
+      margin-top: -1.25rem;
+    }
   }
 `;
 
@@ -38,7 +37,7 @@ export const Tags = styled.div`
   margin-top: 1rem;
   margin-bottom: 1.25rem;
   flex-wrap: wrap;
-  
+
   span {
     background: ${(props) => props.theme["brand-yellow-light"]};
     color: ${(props) => props.theme["brand-yellow-dark"]};
@@ -50,8 +49,7 @@ export const Tags = styled.div`
   }
 `;
 
-export const Name = styled.h4
-`
+export const Name = styled.h4`
   color: ${(props) => props.theme["base-subtitle"]};
   text-transform: uppercase;
   font-family: "Baloo 2", sans-serif;
@@ -68,7 +66,6 @@ export const Description = styled.p`
   color: ${(props) => props.theme["base-label"]};
   margin-bottom: 2rem;
   margin-top: 0.5rem;
-  
 `;
 
 export const CardPrice = styled.div`
@@ -107,11 +104,10 @@ export const CounterActions = styled.div`
   gap: 0.5rem;
 
   > button {
-
     width: 2.3rem;
     height: 2.3rem;
     border: none;
-    padding: 0.5rem;    
+    padding: 0.5rem;
     background: ${(props) => props.theme["brand-purple-dark"]};
     color: ${(props) => props.theme["base-card"]};
     border-radius: 6px;

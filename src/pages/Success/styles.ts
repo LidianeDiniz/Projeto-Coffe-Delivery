@@ -6,7 +6,7 @@ export const SuccessContainer = styled.div`
   justify-content: space-between;
   margin-top: 5rem;
   gap: 2rem;
-
+  width: 100%;
 `;
 
 export const TitleText = styled.h1`
@@ -29,23 +29,20 @@ export const SuccessDetailsContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
-   gap: 5rem;
-   
-  
+  gap: 2rem;
 `;
 
 export const OrderInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 32rem;
+  min-width: 33rem;
   gap: 2rem;
-  padding: 3rem;
-  background: linear-gradient(#FAFAFA , #FAFAFA ) padding-box,
-  linear-gradient(to right, #dbac2c, #8047f8) border-box;
+  padding: 2.5rem;
+  background: linear-gradient(#fafafa, #fafafa) padding-box,
+    linear-gradient(to right, #dbac2c, #8047f8) border-box;
   border-radius: 6px 36px 6px 36px;
   border: 1px solid transparent;
-
 
   .IconMap {
     background: ${(props) => props.theme["brand-purple"]};
@@ -85,13 +82,22 @@ export const IconContainer = styled.div`
 export const TextIcon = styled.p`
 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 0.75rem;
   background: ${(props) => props.theme["base-background"]};
   color: ${(props) => props.theme["base-text"]};
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
-    
-  }
+  font-weight: 400;
+  color: ${(props) => props.theme["base-subtitle"]};   
+  }    
+`;
 
-    
+
+export const SubtitleTextIcon = styled.span`
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: ${(props) => props.theme["base-subtitle"]};
 `;

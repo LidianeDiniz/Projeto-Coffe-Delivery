@@ -1,16 +1,18 @@
 import {
   IconContainer,
   OrderInfoContainer,
-  SubtitleText,
   SuccessContainer,
   SuccessDetailsContainer,
-  TextIcon,
   TitleText,
+  TextIcon,
+  SubtitleTextIcon,
+  SubtitleText,
 } from "./styles";
 import Illustration from "../../assets/Illustration.png";
 import { MapPin, Timer, CurrencyDollar } from "phosphor-react";
 
 export function Success() {
+  
   return (
     <SuccessContainer>
       <div>
@@ -24,26 +26,40 @@ export function Success() {
 
       <SuccessDetailsContainer>
         <OrderInfoContainer>
-          
           <TextIcon>
-          <IconContainer className="IconMap">
-            <MapPin size={16} />
-          </IconContainer>
-          Entrega em Rua João Daniel Martinelli, 102 Farrapos - Porto Alegre, RS
+            <IconContainer className="IconMap">
+              <MapPin size={14} />
+            </IconContainer>
+            <SubtitleTextIcon>
+              Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+              <br />
+              Farrapos - Porto Alegre, RS
+            </SubtitleTextIcon>
           </TextIcon>
 
-          <TextIcon >
-            <IconContainer className="IconTimer" >
-              <Timer size={16} />
+          <TextIcon>
+            <IconContainer className="IconTimer">
+              <Timer size={14} />
             </IconContainer>
-            Previsão de entrega 20 min - 30 min
+            <SubtitleTextIcon>
+              {" "}
+              Previsão de entrega{" "}
+              <strong>
+                <br /> 20 min - 30 min
+              </strong>{" "}
+            </SubtitleTextIcon>
           </TextIcon>
 
           <TextIcon>
             <IconContainer className="IconCurrency">
-              <CurrencyDollar size={16} />
+              <CurrencyDollar size={14} />
             </IconContainer>
-            Pagamento na entrega Cartão de Crédito
+            <SubtitleTextIcon>
+              {" "}
+              Pagamento na entrega <br /> <strong>
+                Cartão de Crédito
+              </strong>{" "}
+            </SubtitleTextIcon>
           </TextIcon>
         </OrderInfoContainer>
         <img src={Illustration} alt="" />
