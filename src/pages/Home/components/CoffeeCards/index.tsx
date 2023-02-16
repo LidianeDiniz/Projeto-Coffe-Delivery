@@ -70,8 +70,8 @@ export function CoffeeCardsItem({ coffee }: CoffeeProps) {
 
         <CounterActions>
           <ButtonCounterActions
-            onIncrement={handleIncrement}
             onDecrement={handleDecrement}
+            onIncrement={handleIncrement}
             quantity={quantity}
           />
           <button>
