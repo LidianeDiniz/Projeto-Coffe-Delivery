@@ -5,18 +5,47 @@ import {
   RemoveButton,
   TitleDescriptionCoffee,
 } from "./styles";
-import americano from "../../../assets/coffees/american.png";
 import { ButtonCounterActions } from "../../../components/ButtonCounterActions/index";
+import { useCarts } from "../../../hooks/useCarts";
+import { CartItem } from "../../../CartContext";
 
-export function CoffeeCartCard() {
+
+interface CoffeeCartCardProps {
+  coffee: CartItem;
+}
+
+export function CoffeeCartCard({coffee}: CoffeeCartCardProps) {
+
+  const {modifyCartItem} = useCarts();
+
+  function handleIncrement(){
+    modifyCartItem(coffee.id, 'increment')
+  }
+
+  function handleDecrement(){
+    modifyCartItem(coffee.id, 'decrement')
+  }
+
+  function formatMoney(value: number) {
+    return value.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+    });
+  }
+
+
+  const coffeeTotal = coffee.price * coffee.quantity;
+  const formattedCoffeePrice = formatMoney(coffeeTotal);
   return (
     <CoffeeCartCardContainer>
       <div>
-        <img src={americano} alt="" />
+        <img src={`/coffes/${coffee.image}`} alt="" />
         <div>
-          <TitleDescriptionCoffee>Expresso Tradicional</TitleDescriptionCoffee>
+          <TitleDescriptionCoffee>{coffee.name}</TitleDescriptionCoffee>
           <ActionsContainer>
-            <ButtonCounterActions />
+            <ButtonCounterActions 
+            onDecrement={handleDecrement} 
+            onIncrement={handleIncrement} 
+            quantity={coffee.quantity} />
             <RemoveButton type="button">
               <Trash size={16} />
               REMOVER
@@ -25,7 +54,7 @@ export function CoffeeCartCard() {
         </div>
       </div>
 
-      <p>R$9.90</p>
+      <p>{formattedCoffeePrice}</p>
     </CoffeeCartCardContainer>
   );
 }
