@@ -5,7 +5,7 @@ import {
   Description,
   Name,
   Tags,
-} from "./styled";
+} from "./styles";
 import { ShoppingCart } from "phosphor-react";
 import { useCarts } from "../../../../hooks/useCarts";
 import { useState } from "react";
@@ -34,6 +34,9 @@ export function CoffeeCardsItem({ coffee }: CoffeeProps) {
   function handleDecrement() {
     setQuantity((state) => state - 1);
   }
+
+  
+
 
   const { AddToCart } = useCarts();
   function handleAddCoffeeCard() {

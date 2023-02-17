@@ -18,7 +18,7 @@ export const CoffeeCardContainer = styled.div`
   &:hover {
     border: 5px solid #d7d5d5;
     transform: scale(0.98);
-    box-shadow: 0 15px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 5px rgba(0, 0, 0, 0.5);
 
     img {
       width: 7.5rem;
@@ -113,8 +113,14 @@ export const CounterActions = styled.div`
     border-radius: 6px;
     transition: filter 0.2s;
 
+    transition: all .5s;
+      border: 3px solid transparent;
+
     &:hover {
-      filter: brightness(1.2);
-    }
+     border: 1px solid #d7d5d5;
+    transform: scale(0.98);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+
+   
   }
 `;

@@ -8,6 +8,7 @@ import {
 import { ButtonCounterActions } from "../../../components/ButtonCounterActions/index";
 import { useCarts } from "../../../hooks/useCarts";
 import { CartItem } from "../../../CartContext";
+import { useState } from "react";
 
 
 interface CoffeeCartCardProps {
@@ -15,6 +16,9 @@ interface CoffeeCartCardProps {
 }
 
 export function CoffeeCartCard({coffee}: CoffeeCartCardProps) {
+  const [quantity, setQuantity] = useState(1);
+  const {removeCartItem} = useCarts();
+
 
   const {modifyCartItem} = useCarts();
 
@@ -26,6 +30,12 @@ export function CoffeeCartCard({coffee}: CoffeeCartCardProps) {
     modifyCartItem(coffee.id, 'decrement')
   }
 
+  function handleRemove() {
+    removeCartItem(coffee.id)
+   alert(`Poxa, você removeu ${coffee.quantity} ${coffee.name} do seu carrinho!`)
+   
+  }
+  console.log(handleRemove)
   function formatMoney(value: number) {
     return value.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
@@ -46,8 +56,10 @@ export function CoffeeCartCard({coffee}: CoffeeCartCardProps) {
             onDecrement={handleDecrement} 
             onIncrement={handleIncrement} 
             quantity={coffee.quantity} />
-            <RemoveButton type="button">
-              <Trash size={16} />
+            <RemoveButton type="button" onClick={handleRemove}>
+              
+              <Trash size={16}  />
+            
               REMOVER
             </RemoveButton>
           </ActionsContainer>
