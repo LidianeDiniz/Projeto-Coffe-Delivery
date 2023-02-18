@@ -1,4 +1,4 @@
-import { Trash } from "phosphor-react";
+import { Trash, CurrencyDollar } from 'phosphor-react';
 import {
   ActionsContainer,
   CoffeeCartCardContainer,
@@ -9,6 +9,7 @@ import { ButtonCounterActions } from "../../../components/ButtonCounterActions/i
 import { useCarts } from "../../../hooks/useCarts";
 import { CartItem } from "../../../CartContext";
 import { useState } from "react";
+import { current } from "immer";
 
 
 interface CoffeeCartCardProps {
@@ -16,7 +17,7 @@ interface CoffeeCartCardProps {
 }
 
 export function CoffeeCartCard({coffee}: CoffeeCartCardProps) {
-  const [quantity, setQuantity] = useState(1);
+ 
   const {removeCartItem} = useCarts();
 
 
@@ -35,7 +36,6 @@ export function CoffeeCartCard({coffee}: CoffeeCartCardProps) {
    alert(`Poxa, você removeu ${coffee.quantity} ${coffee.name} do seu carrinho!`)
    
   }
-  console.log(handleRemove)
   function formatMoney(value: number) {
     return value.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
@@ -66,7 +66,7 @@ export function CoffeeCartCard({coffee}: CoffeeCartCardProps) {
         </div>
       </div>
 
-      <p>{formattedCoffeePrice}</p>
+      <p>R$ {formattedCoffeePrice}</p>
     </CoffeeCartCardContainer>
   );
 }
