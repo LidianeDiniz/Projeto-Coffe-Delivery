@@ -1,15 +1,12 @@
 import { forwardRef, InputHTMLAttributes, ReactNode } from 'react'
-import {
-  PaymentMethodContainer,
-  ContentContainer,
-} from '../PaymentMethodInput/styles'
+import { PaymentMethodContainer, ContentContainer } from './styles'
 
 type PaymentMethodInputProps = InputHTMLAttributes<HTMLInputElement> & {
   icon: ReactNode
   label: string
 }
 
-export const PaymentMethod = forwardRef<
+export const PaymentMethodInput = forwardRef<
   HTMLInputElement,
   PaymentMethodInputProps
 >(({ id, icon, label, ...props }, ref) => {

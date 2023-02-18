@@ -1,10 +1,10 @@
-import { Minus, Plus } from "phosphor-react";
-import { ButtoncounterContainer, IconAdd } from "./styles";
+import { Minus, Plus } from 'phosphor-react'
+import { ButtoncounterContainer, IconAdd } from './styles'
 
 export interface ButtonCounterActionsProps {
-  onIncrement: () => void;
-  onDecrement: () => void;
-  quantity: number;
+  onIncrement: () => void
+  onDecrement: () => void
+  quantity: number
 }
 
 export function ButtonCounterActions({
@@ -23,5 +23,5 @@ export function ButtonCounterActions({
         <Plus size={16} weight="bold" />
       </IconAdd>
     </ButtoncounterContainer>
-  );
+  )
 }

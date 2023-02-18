@@ -5,46 +5,43 @@ import {
   Description,
   Name,
   Tags,
-} from "./styles";
-import { ShoppingCart } from "phosphor-react";
-import { useCarts } from "../../../../hooks/useCarts";
-import { useState } from "react";
-import { ButtonCounterActions } from "../../../../components/ButtonCounterActions";
+} from './styles'
+import { ShoppingCart } from 'phosphor-react'
+import { useCarts } from '../../../../hooks/useCarts'
+import { useState } from 'react'
+import { ButtonCounterActions } from '../../../../components/ButtonCounterActions'
 
 export interface Coffee {
-  id: number;
-  tags: string[];
-  name: string;
-  description: string;
-  image: string;
-  price: number;
+  id: number
+  tags: string[]
+  name: string
+  description: string
+  image: string
+  price: number
 }
 
 export interface CoffeeProps {
-  coffee: Coffee;
+  coffee: Coffee
 }
 
 export function CoffeeCardsItem({ coffee }: CoffeeProps) {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1)
 
   function handleIncrement() {
-    setQuantity((state) => state + 1);
+    setQuantity((state) => state + 1)
   }
 
   function handleDecrement() {
-    setQuantity((state) => state - 1);
+    setQuantity((state) => state - 1)
   }
 
-  
-
-
-  const { AddToCart } = useCarts();
+  const { AddToCart } = useCarts()
   function handleAddCoffeeCard() {
     const coffeeCard = {
       ...coffee,
       quantity,
-    };
-    AddToCart(coffeeCard);
+    }
+    AddToCart(coffeeCard)
   }
   return (
     <CoffeeCardContainer>
@@ -64,7 +61,7 @@ export function CoffeeCardsItem({ coffee }: CoffeeProps) {
           <span>R$</span>
 
           <strong>
-            {Intl.NumberFormat("pt-BR", {
+            {Intl.NumberFormat('pt-BR', {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
             }).format(coffee.price)}
@@ -87,5 +84,5 @@ export function CoffeeCardsItem({ coffee }: CoffeeProps) {
         </CounterActions>
       </CardPrice>
     </CoffeeCardContainer>
-  );
+  )
 }

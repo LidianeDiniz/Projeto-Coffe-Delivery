@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PaymentMethodOptionsContainer = styled.div`
   display: flex;
@@ -7,6 +7,4 @@ export const PaymentMethodOptionsContainer = styled.div`
   gap: 0.75rem;
   margin-bottom: 2.5rem;
   width: 100%;
-
- 
-`;
+`

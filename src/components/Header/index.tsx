@@ -1,11 +1,11 @@
-import { HeaderContainer, HeaderButton, HeaderCardsContainer } from "./styles";
-import logoCoffeImg from "../../assets/logo-coffe-delivery.svg";
-import { MapPin, ShoppingCart } from "phosphor-react";
-import { NavLink } from "react-router-dom";
-import { useCarts } from '../../hooks/useCarts';
+import { HeaderContainer, HeaderButton, HeaderCardsContainer } from './styles'
+import logoCoffeImg from '../../assets/logo-coffe-delivery.svg'
+import { MapPin, ShoppingCart } from 'phosphor-react'
+import { NavLink } from 'react-router-dom'
+import { useCarts } from '../../hooks/useCarts'
 
 export function Header() {
-  const {CartQuantity} = useCarts()
+  const { CartQuantity } = useCarts()
   return (
     <HeaderContainer>
       <NavLink to="/">
@@ -26,5 +26,5 @@ export function Header() {
         </NavLink>
       </HeaderCardsContainer>
     </HeaderContainer>
-  );
+  )
 }

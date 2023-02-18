@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -11,8 +11,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
         body{
-            background: ${(props) => props.theme["base-background"]};
-            color: ${(props) => props.theme["base-text"]};
+            background: ${(props) => props.theme['base-background']};
+            color: ${(props) => props.theme['base-text']};
         -webkit-font-smoothing: antialiased;
         }
 
@@ -20,8 +20,8 @@ export const GlobalStyle = createGlobalStyle`
 
         body, input, textarea,  button {
 
-            background-color: ${(props) => props.theme["base-background"]};
-           color: ${(props) => props.theme["base-text"]};
+            background-color: ${(props) => props.theme['base-background']};
+           color: ${(props) => props.theme['base-text']};
           -webkit-font-smoothing: antialiased;
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
@@ -48,4 +48,4 @@ export const GlobalStyle = createGlobalStyle`
 
         
 
-`;
+`

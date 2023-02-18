@@ -1,17 +1,16 @@
-import styled from "styled-components";
-import backgroundIntro from "../../../../assets/background-intro.png";
+import styled from 'styled-components'
+import backgroundIntro from '../../../../assets/background-intro.png'
 
 export const IntroContainer = styled.section`
   width: 100%;
   height: 34rem;
- 
 
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: ${(props) => props.theme["base-title"]};
+  background: ${(props) => props.theme['base-title']};
 
   background: ${() => `url(${backgroundIntro}) no-repeat center`};
   background-size: cover;
@@ -21,31 +20,30 @@ export const IntroContainer = styled.section`
     font-size: 3rem;
     line-height: 3.85rem;
     font-weight: bold;
-    font-family: "Baloo 2", sans-serif;
-    color: ${(props) => props.theme["base-title"]};
+    font-family: 'Baloo 2', sans-serif;
+    color: ${(props) => props.theme['base-title']};
   }
-`;
+`
 
 export const Subtitle = styled.p`
   margin-top: 1rem;
   font-size: 1.25rem;
 
-  font-family: "Roboto", sans-serif;
-  color: ${(props) => props.theme["base-subtitle"]};
-`;
+  font-family: 'Roboto', sans-serif;
+  color: ${(props) => props.theme['base-subtitle']};
+`
 
 export const IntroContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3.5rem;
-`;
+`
 
 export const ImageContainer = styled.img`
   width: 70%;
   top: 5.75rem;
-`;
-
+`
 
 export const BenefitsContainer = styled.div`
   width: 100%;
@@ -54,15 +52,12 @@ export const BenefitsContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   row-gap: 1.25rem;
   margin-top: 4.125rem;
-
-`;
-
-
+`
 
 export const IconsContainer = styled.a`
   
   border-radius: 50%;
-  color:${(props) => props.theme["brand-yellow"]};
+  color:${(props) => props.theme['brand-yellow']};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,4 +76,4 @@ export const IconsContainer = styled.a`
 }
 }
 
-`;
+`

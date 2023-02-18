@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const HeaderInputFormContainer = styled.header`
   display: flex;
@@ -12,11 +12,11 @@ export const HeaderInputFormContainer = styled.header`
   p {
     display: flex;
     justify-content: flex-start;
-  align-items: center;
+    align-items: center;
     font-size: 1rem;
     font-weight: 400;
     text-transform: capitalize;
-    color: ${(props) => props.theme["base-subtitle"]};
+    color: ${(props) => props.theme['base-subtitle']};
   }
 
   span {
@@ -25,6 +25,6 @@ export const HeaderInputFormContainer = styled.header`
     align-items: center;
     font-size: 0.875rem;
     text-transform: full-width;
-    color: ${(props) => props.theme["base-text"]};
+    color: ${(props) => props.theme['base-text']};
   }
-`;
+`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const CompleteOrderContainer = styled.main`
   width: 100%;
@@ -7,4 +7,4 @@ export const CompleteOrderContainer = styled.main`
   justify-content: space-between;
   gap: 2rem;
   width: 100%;
-`;
+`

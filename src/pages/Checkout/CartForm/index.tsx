@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useFormContext } from 'react-hook-form'
 import {
   AdressContainer,
   AdressHeaderContainer,
@@ -6,22 +6,27 @@ import {
   Grid,
   PaymentContainer,
   Title,
-} from "./styles";
-import { CurrencyDollar, MapPinLine } from "phosphor-react";
-import { HeaderForm } from "../HeaderForm";
-import { PaymentMethodOptions } from "../PaymentMethodOptions/index";
+} from './styles'
+import { CurrencyDollar, MapPinLine } from 'phosphor-react'
+import { PaymentMethodOptions } from '../PaymentMethodOptions/index'
+import { HeaderForm } from '../HeaderForm'
+import { Input } from '../../../components/Input'
 
 interface Inputs {
-  cep: string;
-  street: string;
-  number: number;
-  complement: string;
-  city: string;
-  uf: string;
+  cep: string
+  street: string
+  number: number
+  complement: string
+  city: string
+  uf: string
+  district: string
 }
 
 export function CartForm() {
-  const { register } = useForm<Inputs>();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<Inputs>()
   return (
     <CartFormContainer>
       <Title>Complete seu pedido</Title>
@@ -35,47 +40,52 @@ export function CartForm() {
         </AdressHeaderContainer>
 
         <AdressContainer>
-          <input
-            className="CEP"
-            type="number"
-            required
+          <Input
+            type="text"
             placeholder="CEP"
-            {...register("cep", { required: true })}
+            {...register('cep')}
+            error={errors.cep?.message}
+            className="cep"
           />
           <input
             className="street"
             type="text"
             required
             placeholder="Rua"
-            {...register("street", { required: true })}
+            {...register('street', { required: true })}
           />
 
           <input
             type="number"
             required
             placeholder="Número"
-            {...register("number", { required: true })}
+            {...register('number', { required: true })}
           />
           <input
             className="complement"
             placeholder="Complemento "
-            {...register("complement")}
+            {...register('complement')}
           />
 
-          <input type="text" placeholder="Bairro" {...register} />
+          <Input
+            type="text"
+            placeholder="Bairro"
+            {...register('district')}
+            error={errors.district?.message}
+          />
 
           <input
             type="text"
             required
             placeholder="Cidade"
-            {...register("city", { required: true })}
+            {...register('city', { required: true })}
           />
           <input
             type="text"
             required
             placeholder="UF"
             maxLength={2}
-            {...register("uf", { required: true })}
+            {...register('uf', { required: true })}
           />
         </AdressContainer>
       </Grid>
@@ -83,11 +93,11 @@ export function CartForm() {
         <HeaderForm
           title="Pagamento"
           description="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
-          icon={<CurrencyDollar size={24} color={"#8047F8"} />}
+          icon={<CurrencyDollar size={24} color={'#8047F8'} />}
         />
 
         <PaymentMethodOptions />
       </PaymentContainer>
     </CartFormContainer>
-  );
+  )
 }

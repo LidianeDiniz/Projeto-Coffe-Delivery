@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const PaymentMethodContainer = styled.div`
   input {
@@ -7,14 +7,14 @@ export const PaymentMethodContainer = styled.div`
   }
 
   input:checked + label div {
-    background: ${(props) => props.theme["brand-purple-light"]};
-    border: 1px solid ${(props) => props.theme["brand-purple"]};
+    background: ${(props) => props.theme['brand-purple-light']};
+    border: 1px solid ${(props) => props.theme['brand-purple']};
 
     &:hover {
-      background: ${(props) => props.theme["brand-purple-light"]};
+      background: ${(props) => props.theme['brand-purple-light']};
     }
   }
-`;
+`
 
 export const ContentContainer = styled.div`
   width: 11.12rem;
@@ -28,20 +28,20 @@ export const ContentContainer = styled.div`
   border-radius: 6px;
   font-size: 0.75rem;
 
-  color: ${(props) => props.theme["base-text"]};
+  color: ${(props) => props.theme['base-text']};
   text-transform: uppercase;
-  background: ${(props) => props.theme["base-button"]};
-  border: 1px solid ${(props) => props.theme["base-button"]};
+  background: ${(props) => props.theme['base-button']};
+  border: 1px solid ${(props) => props.theme['base-button']};
   cursor: pointer;
   transition: 0.4s;
 
   svg {
-    color: ${(props) => props.theme["brand-purple"]};
+    color: ${(props) => props.theme['brand-purple']};
   }
 
   &:hover {
-    background: ${(props) => props.theme["base-hover"]};
+    background: ${(props) => props.theme['base-hover']};
   }
 
   user-select: none;
-`;
+`

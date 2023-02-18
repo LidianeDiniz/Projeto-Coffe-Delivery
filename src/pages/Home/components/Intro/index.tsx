@@ -5,16 +5,9 @@ import {
   ImageContainer,
   BenefitsContainer,
   IconsContainer,
-} from "./styles";
-import introImg from "../../../../assets/intro-img.svg";
-import {
-  ShoppingCart,
-  Package,
-  Timer,
-  Coffee,
-  
-} from "phosphor-react";
-
+} from './styles'
+import introImg from '../../../../assets/intro-img.svg'
+import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
 
 export function Intro() {
   return (
@@ -40,12 +33,12 @@ export function Intro() {
               Embalagem mantém o café intacto
             </IconsContainer>
 
-            <IconsContainer href="/"target={'_blank'}>
+            <IconsContainer href="/" target={'_blank'}>
               <Timer color="#DBAC2C" size={22} weight="fill" />
               Entrega rápida e rastreada
             </IconsContainer>
 
-            <IconsContainer href="/"target={'_blank'}>
+            <IconsContainer href="/" target={'_blank'}>
               <Coffee color="#8047F8" size={22} weight="fill" />O café chega
               fresquinho até você
             </IconsContainer>
@@ -55,5 +48,5 @@ export function Intro() {
         <ImageContainer src={introImg} alt="" />
       </IntroContent>
     </IntroContainer>
-  );
+  )
 }

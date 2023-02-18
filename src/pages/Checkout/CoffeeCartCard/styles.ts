@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const CoffeeCartCardContainer = styled.div`
   width: 100%;
@@ -6,7 +6,7 @@ export const CoffeeCartCardContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  border-bottom: 1px solid ${(props) => props.theme["base-button"]};
+  border-bottom: 1px solid ${(props) => props.theme['base-button']};
   padding-bottom: 1.5rem;
   margin-bottom: 1.5rem;
 
@@ -23,22 +23,22 @@ export const CoffeeCartCardContainer = styled.div`
 
   > p {
     font-size: 1rem;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     align-self: flex-start;
 
-    color: ${(props) => props.theme["base-text"]};
+    color: ${(props) => props.theme['base-text']};
   }
-`;
+`
 
 export const TitleDescriptionCoffee = styled.h4`
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  color: ${(props) => props.theme["base-subtitle"]};
-`;
+  color: ${(props) => props.theme['base-subtitle']};
+`
 
 export const ActionsContainer = styled.div`
   margin-top: 0.5rem;
@@ -52,26 +52,26 @@ export const ActionsContainer = styled.div`
     max-width: 4.5rem;
     height: 100%;
   }
-`;
+`
 
 export const RemoveButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  color: ${(props) => props.theme["base-text"]};
+  color: ${(props) => props.theme['base-text']};
   font-size: 0.75rem;
   height: 100%;
   border: none;
-  background: ${(props) => props.theme["base-button"]};
+  background: ${(props) => props.theme['base-button']};
   padding: 0 0.5rem;
   border-radius: 6px;
   transition: 0.4s;
 
   svg {
-    color: ${(props) => props.theme["brand-purple"]};
+    color: ${(props) => props.theme['brand-purple']};
   }
 
   &:hover {
-    background: ${(props) => props.theme["base-hover"]};
+    background: ${(props) => props.theme['base-hover']};
   }
-`;
+`

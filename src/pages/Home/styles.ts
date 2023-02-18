@@ -1,8 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 export const HomeConatiner = styled.div`
-
-margin-bottom: 9.8rem;
-`;
-
-
-
+  margin-bottom: 9.8rem;
+`

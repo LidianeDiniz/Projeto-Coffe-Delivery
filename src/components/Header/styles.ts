@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -12,18 +12,16 @@ export const HeaderContainer = styled.header`
   left: 0;
   z-index: 5;
 
-
   > div {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    
   }
-`;
+`
 
 interface HeaderButtonProps {
-  variant: "purple" | "yellow";
+  variant: 'purple' | 'yellow'
 }
 
 export const HeaderButton = styled.button<HeaderButtonProps>`
@@ -39,41 +37,37 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
   position: relative;
   cursor: pointer;
 
+  ${(props) =>
+    props.variant === 'purple' &&
+    css`
+      background: ${props.theme['brand-purple-light']};
+    `}
 
-${(props) =>
-  props.variant === "purple" &&
-  css`
-    background: ${props.theme["brand-purple-light"]};
-  `}
-
-    ${(props) =>
-      props.variant === "yellow" &&
-      css`
-        background: ${props.theme["brand-yellow-light"]};
-      `}
+  ${(props) =>
+    props.variant === 'yellow' &&
+    css`
+      background: ${props.theme['brand-yellow-light']};
+    `}
 
         &:hover {
-            ${(props) =>
-              props.variant === "purple" &&
-              css`
-                background: ${props.theme["brand-purple"]};
-              `}
+    ${(props) =>
+      props.variant === 'purple' &&
+      css`
+        background: ${props.theme['brand-purple']};
+      `}
 
-                ${(props) =>
-                  props.variant === "yellow" &&
-                  css`
-                    background: ${props.theme["brand-yellow"]};
-                  `}
+    ${(props) =>
+      props.variant === 'yellow' &&
+      css`
+        background: ${props.theme['brand-yellow']};
+      `}
             transition: background-color 0.2s;
-          }
-`;
-
+  }
+`
 
 export const HeaderCardsContainer = styled.div`
   display: flex;
   align-items: center;
-  
+
   gap: 0.75rem;
-  
-  
-  `;
+`

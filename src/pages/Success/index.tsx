@@ -7,19 +7,18 @@ import {
   TextIcon,
   SubtitleTextIcon,
   SubtitleText,
-} from "./styles";
-import Illustration from "../../assets/Illustration.png";
-import { MapPin, Timer, CurrencyDollar } from "phosphor-react";
+} from './styles'
+import Illustration from '../../assets/Illustration.png'
+import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
 
 export function Success() {
-  
   return (
     <SuccessContainer>
       <div>
         <TitleText>Uhu! Pedido confirmado.</TitleText>
 
         <SubtitleText>
-          {" "}
+          {' '}
           Agora é só aguardar que logo o café chegará até você.
         </SubtitleText>
       </div>
@@ -42,11 +41,11 @@ export function Success() {
               <Timer size={14} />
             </IconContainer>
             <SubtitleTextIcon>
-              {" "}
-              Previsão de entrega{" "}
+              {' '}
+              Previsão de entrega{' '}
               <strong>
                 <br /> 20 min - 30 min
-              </strong>{" "}
+              </strong>{' '}
             </SubtitleTextIcon>
           </TextIcon>
 
@@ -55,15 +54,15 @@ export function Success() {
               <CurrencyDollar size={14} />
             </IconContainer>
             <SubtitleTextIcon>
-              {" "}
+              {' '}
               Pagamento na entrega <br /> <strong>
                 Cartão de Crédito
-              </strong>{" "}
+              </strong>{' '}
             </SubtitleTextIcon>
           </TextIcon>
         </OrderInfoContainer>
         <img src={Illustration} alt="" />
       </SuccessDetailsContainer>
     </SuccessContainer>
-  );
+  )
 }
