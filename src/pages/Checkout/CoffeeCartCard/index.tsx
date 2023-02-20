@@ -43,7 +43,7 @@ export function CoffeeCartCard({ coffee }: CoffeeCartCardProps) {
   return (
     <CoffeeCartCardContainer>
       <div>
-        <img src={`/${coffee.image}`} alt="" />
+        <img src={`/coffees/${coffee.image}`} alt="" />
         <div>
           <TitleDescriptionCoffee>{coffee.name}</TitleDescriptionCoffee>
           <ActionsContainer>
