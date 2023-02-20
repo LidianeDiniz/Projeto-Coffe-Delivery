@@ -46,6 +46,17 @@ export const GlobalStyle = createGlobalStyle`
 
 }
 
+::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+  ::-webkit-scrollbar-track {
+    background: ${(props) => props.theme['base-button']}
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background: ${(props) => props.theme['brand-purple']}
+  }
+
         
 
 `

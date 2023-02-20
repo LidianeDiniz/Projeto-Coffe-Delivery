@@ -13,7 +13,9 @@ export const Grid = styled.div`
   border-radius: 6px;
   background: ${(props) => props.theme['base-card']};
   padding: 2.5rem;
+
   width: 40rem;
+  height: 23rem;
 `
 
 export const Title = styled.h1`
@@ -36,6 +38,7 @@ margin-bottom: 5rem;
 
 
 
+
 }
 `
 
@@ -44,6 +47,7 @@ export const AdressContainer = styled.form`
     
 display: grid;
 justify-content: center
+
 
     column-gap: 0.75rem;
     row-gap: 1rem;
@@ -92,6 +96,8 @@ justify-content: flex-start;
 align-items: flex-start;
 padding: 2.5rem;
 width: 40rem;
+
+
 
 }
 `

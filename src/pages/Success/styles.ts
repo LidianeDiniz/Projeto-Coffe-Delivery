@@ -94,7 +94,7 @@ export const TextIcon = styled.p`
   }    
 `
 
-export const SubtitleTextIcon = styled.span`
+export const SubtitleTextIcon = styled.div`
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   font-weight: 400;

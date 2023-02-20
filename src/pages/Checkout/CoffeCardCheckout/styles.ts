@@ -15,8 +15,6 @@ margin-top: 1.5rem;
 
 
 
-
-
 `
 
 export const TitleText = styled.h1`

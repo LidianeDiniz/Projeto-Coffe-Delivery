@@ -12,6 +12,14 @@ import { PaymentMethodOptions } from '../PaymentMethodOptions/index'
 import { HeaderForm } from '../HeaderForm'
 import { Input } from '../../../components/Input'
 
+interface ErrorsType {
+  errors: {
+    [key: string]: {
+      message: string
+    }
+  }
+}
+
 interface Inputs {
   cep: string
   street: string
@@ -23,10 +31,8 @@ interface Inputs {
 }
 
 export function CartForm() {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext<Inputs>()
+  const { register, formState } = useFormContext<Inputs>()
+  const { errors } = formState as unknown as ErrorsType
   return (
     <CartFormContainer>
       <Title>Complete seu pedido</Title>
@@ -47,24 +53,29 @@ export function CartForm() {
             error={errors.cep?.message}
             className="cep"
           />
-          <input
+          <Input
             className="street"
             type="text"
             required
             placeholder="Rua"
             {...register('street', { required: true })}
+            error={errors.street?.message}
           />
 
-          <input
+          <Input
             type="number"
+            className="number"
             required
             placeholder="Número"
             {...register('number', { required: true })}
+            error={errors.number?.message}
           />
-          <input
+          <Input
             className="complement"
             placeholder="Complemento "
             {...register('complement')}
+            error={errors.complement?.message}
+            rightText="Opiconal"
           />
 
           <Input
@@ -74,18 +85,20 @@ export function CartForm() {
             error={errors.district?.message}
           />
 
-          <input
+          <Input
             type="text"
             required
             placeholder="Cidade"
             {...register('city', { required: true })}
+            error={errors.city?.message}
           />
-          <input
+          <Input
             type="text"
             required
             placeholder="UF"
             maxLength={2}
             {...register('uf', { required: true })}
+            error={errors.uf?.message}
           />
         </AdressContainer>
       </Grid>

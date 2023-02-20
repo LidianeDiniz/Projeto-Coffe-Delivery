@@ -1,4 +1,4 @@
-import { Trash, CurrencyDollar } from 'phosphor-react'
+import { Trash } from 'phosphor-react'
 import {
   ActionsContainer,
   CoffeeCartCardContainer,
@@ -8,8 +8,6 @@ import {
 import { ButtonCounterActions } from '../../../components/ButtonCounterActions/index'
 import { useCarts } from '../../../hooks/useCarts'
 import { CartItem } from '../../../CartContext'
-import { useState } from 'react'
-import { current } from 'immer'
 
 interface CoffeeCartCardProps {
   coffee: CartItem

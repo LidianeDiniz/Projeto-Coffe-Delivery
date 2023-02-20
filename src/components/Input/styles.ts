@@ -1,50 +1,51 @@
 import styled, { css } from 'styled-components'
 
-interface InputWrapperProps {
-  hasError?: boolean
-}
-
-export const InputContainer = styled.div`
+export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
   position: relative;
-  gap: 1.6rem;
 
-  p {
-    color: ${(props) => props.theme['base-label']};
+  > p {
+    color: ${(props) => props.theme['base-error']};
   }
 `
 
-export const InputWrapper = styled.div<InputWrapperProps>`
-  height: 4.2rem;
-  border-radius: 0.4rem;
+interface InputContainerProps {
+  hasError: boolean
+}
+
+export const InputStyleContainer = styled.div<InputContainerProps>`
+  height: 2.625rem;
+  border-radius: 4px;
   border: 1px solid ${(props) => props.theme['base-button']};
   background: ${(props) => props.theme['base-input']};
+  display: flex;
+  align-items: center;
+  transition: 0.4s;
   display: flex;
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
 
-  transition: 0.4s;
-
   &:focus-within {
     border-color: ${(props) => props.theme['brand-yellow-dark']};
   }
 
-  ${({ hasError, theme }) =>
+  ${({ hasError }) =>
     hasError &&
     css`
       border-color: ${(props) => props.theme['base-error']};
     `}
 `
 
-export const InputItem = styled.input`
+export const InputStyled = styled.input`
   flex: 1;
   background: none;
   border: none;
-  padding: 0 1.2rem;
+  padding: 0 0.75rem;
   height: 100%;
-  font-size: 1.4rem;
+  font-size: 0.75rem;
   color: ${(props) => props.theme['base-text']};
 
   &::placeholder {
@@ -52,15 +53,13 @@ export const InputItem = styled.input`
   }
 `
 
-export const InfoRight = styled.p`
-  font-size: 1.2rem;
-  margin-right: 1.2rem;
+export const RightText = styled.p`
+  font-size: 0.75rem;
+  margin-right: 0.75rem;
   font-style: italic;
   color: ${(props) => props.theme['base-label']};
 `
 
-export const ErrorInfo = styled.span`
-  margin-top: -0.8rem;
-  font-size: 1.2rem;
-  color: ${(props) => props.theme['base-error']};
+export const RegularText = styled.p`
+  font-size: 0.75rem;
 `

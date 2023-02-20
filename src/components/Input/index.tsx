@@ -1,38 +1,27 @@
 import {
-  FieldError,
-  FieldErrors,
-  FieldErrorsImpl,
-  Merge,
-} from 'react-hook-form'
-import {
-  InputContainer,
+  InputStyleContainer,
+  InputStyled,
   InputWrapper,
-  InputItem,
-  InfoRight,
-  ErrorInfo,
+  RegularText,
+  RightText,
 } from './styles'
 import { forwardRef, InputHTMLAttributes } from 'react'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  error?:
-    | string
-    | FieldError
-    | Merge<FieldError, FieldErrorsImpl<any>>
-    | undefined
-  infoRight?: string
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  error?: string
+  rightText?: string
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ error, infoRight, className, ...props }, ref) => {
+  ({ error, rightText, className, ...props }, ref) => {
     return (
-      <InputContainer className={className}>
-        <InputWrapper hasError={!!error}>
-          <InputItem ref={ref} {...props} />
-          {infoRight && <InfoRight>{infoRight}</InfoRight>}
-        </InputWrapper>
-
-        {!!error && <ErrorInfo>{error.toString()}</ErrorInfo>}
-      </InputContainer>
+      <InputWrapper className={className}>
+        <InputStyleContainer hasError={!!error}>
+          <InputStyled ref={ref} {...props} />
+          {rightText && <RightText>{rightText}</RightText>}
+        </InputStyleContainer>
+        {error && <RegularText>{error}</RegularText>}
+      </InputWrapper>
     )
   },
 )

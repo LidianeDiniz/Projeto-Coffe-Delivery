@@ -5,9 +5,28 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, FormProvider } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import { useCarts } from '../../hooks/useCarts'
+
+enum PaymentMethods {
+  credit = 'credit',
+  debit = 'debit',
+  money = 'money',
+}
 
 const confirmOrderFormValidationSchema = zod.object({
-  cep: zod.string(),
+  cep: zod.string().min(1, 'Informe o CEP'),
+  street: zod.string().min(1, 'Informe a Rua '),
+  number: zod.string().min(1, 'Informe o número '),
+  complement: zod.string(),
+  district: zod.string().min(1, 'Informe O Bairro '),
+  city: zod.string().min(1, 'Informe a Cidade'),
+  uf: zod.string().min(2, 'Informe o Estado '),
+
+  paymentMethod: zod.nativeEnum(PaymentMethods, {
+    errorMap: () => {
+      return { message: 'Informe a forma de pagamento' }
+    },
+  }),
 })
 
 export type OrderData = zod.infer<typeof confirmOrderFormValidationSchema>
@@ -22,10 +41,10 @@ export function CompleteOrderPage() {
   const { handleSubmit } = confirmOrderForm
 
   const navigate = useNavigate()
-  const { cleanCart } = useCart()
+  const { cleanCart } = useCarts()
 
   function handleConfirmOrder(data: ConfirmOrderFormData) {
-    navigate('/orderConfirmed', {
+    navigate('/Success', {
       state: data,
     })
     cleanCart()
@@ -43,6 +62,6 @@ export function CompleteOrderPage() {
     </FormProvider>
   )
 }
-function useCart(): { cleanCart: any } {
+function cleanCart() {
   throw new Error('Function not implemented.')
 }

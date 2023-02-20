@@ -9,7 +9,7 @@ export const ButtoncounterContainer = styled.div`
   justify-content: space-between;
   gap: 4px;
   border-radius: 6px;
-
+  padding: 0.25rem;
   
   input {
     text-align: center;

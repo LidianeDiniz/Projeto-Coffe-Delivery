@@ -10,8 +10,17 @@ import {
 } from './styles'
 import Illustration from '../../assets/Illustration.png'
 import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
+import { useLocation } from 'react-router-dom'
+import { OrderData } from '../Checkout'
+import { paymentMethods } from '../Checkout/PaymentMethodOptions'
+
+interface LocationType {
+  state: OrderData
+}
 
 export function Success() {
+  const { state } = useLocation() as unknown as LocationType
+
   return (
     <SuccessContainer>
       <div>
@@ -30,9 +39,14 @@ export function Success() {
               <MapPin size={14} />
             </IconContainer>
             <SubtitleTextIcon>
-              Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+              Entrega em
+              <strong>
+                {' '}
+                <strong>{state.street}</strong>, {state.number}
+                <br />
+                {state.district} - {state.city}, {state.uf}
+              </strong>
               <br />
-              Farrapos - Porto Alegre, RS
             </SubtitleTextIcon>
           </TextIcon>
 
@@ -55,9 +69,8 @@ export function Success() {
             </IconContainer>
             <SubtitleTextIcon>
               {' '}
-              Pagamento na entrega <br /> <strong>
-                Cartão de Crédito
-              </strong>{' '}
+              Pagamento na entrega <br />{' '}
+              <strong>{paymentMethods[state.paymentMethod].label}</strong>
             </SubtitleTextIcon>
           </TextIcon>
         </OrderInfoContainer>
