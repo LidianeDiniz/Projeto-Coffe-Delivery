@@ -130,3 +130,5 @@ export const coffee = [
     quantity: 0,
   },
 ]
+
+export default coffee
