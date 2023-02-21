@@ -6,7 +6,7 @@
 
 <br>
 
-> :mag_right: O Coffee Delivery é uma aplicação que imita o fluxo da compra de um produto, no qual o usuário tem um catálogo de produtos(cafés), onde adiciona quantidade de cafés de sua preferência e depois preencher o formulário de entrega e pagamento. 
+> :mag_right: O Coffee Delivery é uma aplicação que imita o fluxo da compra de um produto, no qual o usuário tem um catálogo de produtos(cafés), onde adiciona quantidade de cafés de sua preferência depois de preencher o formulário de entrega e pagamento. 
 > <br>
 
 :paperclip: Link da aplicação: https://projeto-coffe-delivery-3o387xfwt-lidianediniz.vercel.app/
